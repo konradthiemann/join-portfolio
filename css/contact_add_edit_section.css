@@ -1,0 +1,266 @@
+/* Add Contact Section*/
+.add-contact-text {
+  font-weight: 400;
+  font-size: 21px;
+  color: #ffffff;
+  padding-top: 12px;
+  padding-bottom: 50px;
+}
+.edit-contact-text-edit {
+  font-weight: 400;
+  font-size: 21px;
+  color: #ffffff;
+  padding-top: 12px;
+  padding-bottom: 50px;
+}
+
+.contact-left-fadeIn-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 0.603);
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 16%);
+  overflow: auto;
+  left: -100%;
+  z-index: 1;
+  transition: all 1ms ease-in-out;
+}
+
+.contact-left-fadeIn {
+  width: 580px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  border-radius: 0px 30px 30px 0px;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 16%);
+  overflow: auto;
+  left: -200%;
+  z-index: 2;
+  transition: all 200ms ease-in-out;
+}
+
+.show-left {
+  left: 0%;
+}
+
+.show-message {
+  left: 24rem;
+}
+
+/*  edit Contact Section  */
+.help-arrow-edit {
+  display: none;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.icon-edit-img-contact {
+  display: none;
+}
+.edit-contact {
+  width: 580px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  border-radius: 0px 30px 30px 30px;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 16%);
+  overflow: hidden;
+}
+
+.edit-contact-head {
+  background-color: #005dff;
+  width: 580px;
+  padding-bottom: 70px;
+  border-radius: 0px 30px 0px 0px;
+}
+
+.edit-contact-cross {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img-cross {
+  margin: 20px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.edit-contact-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-contact-h {
+  font-family: Open Sans;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  padding-top: 12px;
+}
+
+.img-edit-contact {
+  height: 66px;
+  width: 55px;
+  left: 262px;
+  top: 108px;
+  border-radius: 0px;
+}
+
+.edit-contact-main {
+  width: 580px;
+  height: 388px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 43px;
+  padding-bottom: 20px;
+}
+
+.input-contact-main {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 400px;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+
+.input-newContact-main {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  flex-direction: column;
+}
+
+.input-contact {
+  width: 100%;
+  margin-top: 35px;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.input-contact-name {
+  width: 90%;
+  height: 50px;
+  border: 0;
+  font-size: 18px;
+  font-weight: 400;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.input-contact-email {
+  width: 90%;
+  height: 50px;
+  border: 0;
+  font-size: 18px;
+  font-weight: 400;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.input-contact-number {
+  width: 90%;
+  height: 50px;
+  border: 0;
+  font-size: 18px;
+  font-weight: 400;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.button-container {
+  display: flex;
+  gap: 32px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.button-cancel {
+  height: 61px;
+  width: 136px;
+  left: 20px;
+  top: 20px;
+  padding: 18px 10px 18px 10px;
+  border-radius: 10px;
+  margin-right: 25px;
+  background-color: #ffffff;
+  font-size: 23px;
+  color: #647188;
+  border: 1px solid #647188;
+  padding-left: 10x;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.button-cancel:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #4589ff;
+  transition: all 100ms ease-in-out;
+  border-color: #4589ff;
+  z-index: 3;
+}
+
+.button-cancel:hover path {
+  stroke: #4589ff;
+}
+
+.cancel-contact:hover {
+  background: #4589ff;
+}
+
+.button-create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 61px;
+  width: 210px;
+  border-radius: 10px;
+  padding: 18px 10px 18px 10px;
+  background: #4589ff;
+  box-shadow: 0px 0px 4px 0px #00000029;
+  border: none;
+  font-family: Open Sans;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.button-create:hover {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background: #005dff;
+  animation-timing-function: ease-in-out;
+  animation-duration: 100ms;
+}
+
+.create-contact {
+  padding-left: 8px;
+}

@@ -1,0 +1,89 @@
+/* Log-In Page */
+
+@media (max-width: 800px) {
+    .log-in-container {
+      width: 90% !important;
+    }
+  
+    .return-to-log-in-page-button {
+      top: 22px;
+      left: 22px;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .registration-upper-right-inner-container {
+      top: 91%;
+      right: 50%;
+      transform: translateX(50%);
+      width: 315px;
+    }
+  
+    .log-in-container {
+      height: 530px;
+      padding-top: 45px;
+    }
+  
+    .join-logo-login-new-position {
+      top: 35px;
+      left: 35px;
+      width: 65px;
+      height: 88px;
+    }
+  
+    .log-in-input-container {
+      width: 90%;
+      height: 250px !important;
+    }
+  
+    .log-in-remember-me-forgot-password-section {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      width: 82%;
+      gap: 29px;
+      height: 52px;
+    }
+  
+    .log-in-commit-guest-log-in-section {
+      flex-direction: column;
+      height: 150px;
+    }
+  
+    .log-in-commit-guest-log-in-section-button-log-in {
+      width: 180px;
+      height: 50px;
+    }
+  
+    .log-in-commit-guest-log-in-section-button-guest {
+      width: 180px;
+      height: 50px;
+    }
+  
+    .forgot-password-description-container {
+      width: 80%;
+      margin: 18px 0;
+    }
+  
+    .email-send-message {
+      width: 80%;
+      font-size: 17px;
+    }
+  
+    .log-in-headline-container {
+      height: 136px;
+    }
+  
+    .log-in-container-headline {
+      width: 490px !important;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .join-logo-login-new-position {
+      top: -6px;
+      left: 23px;
+      width: 46px;
+      height: 88px;
+    }
+  }
+  

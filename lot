@@ -1,0 +1,12 @@
+
+C:\P_Dokumente\Code Projects\GitHub\Join>git pull 
+Already up to date.
+
+C:\P_Dokumente\Code Projects\GitHub\Join>git add . 
+
+C:\P_Dokumente\Code Projects\GitHub\Join>git commit -m "started with addTask - of work to do" 
+[main 524f195] started with addTask - of work to do
+ 4 files changed, 24 insertions(+), 2 deletions(-)
+ create mode 100644 lot
+
+C:\P_Dokumente\Code Projects\GitHub\Join>git push 

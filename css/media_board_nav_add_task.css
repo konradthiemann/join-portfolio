@@ -1,0 +1,427 @@
+/* board- and add-task-page  */
+
+@media (max-width: 1400px) {
+    .content {
+      padding: 0 20px;
+      left: 60px;
+      top: 0;
+    }
+  
+    nav {
+      width: 60px;
+      padding: 30px 10px 20px 10px;
+    }
+  
+    .nav-top {
+      width: 100%;
+    }
+  
+    .nav-element {
+      justify-content: center;
+      height: 35px;
+      width: 35px;
+      padding: 0;
+      margin: 10px 0;
+    }
+  
+    .nav-element span {
+      display: none;
+    }
+  
+    .board-tasks {
+      margin-top: 30px;
+    }
+  
+    .task-right {
+      left: 600px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .board-tasks {
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: auto;
+      margin-top: 25px;
+    }
+  
+    .to-do-tasks-container,
+    .in-progress-tasks-container,
+    .await-feedback-tasks-container,
+    .done-tasks-container {
+      height: fit-content;
+      min-height: 260px;
+    }
+  
+    .board-task-slide-in-div {
+      width: 520px;
+    }
+  
+    .board-task-slide-in-edit-div {
+      padding: 0 0;
+      width: 110%;
+      left: -15px;
+    }
+  
+    .board-task-slide-in-edit-div > img {
+      top: -10px;
+      right: 10px;
+    }
+  
+    .board-task-slide-in-edit-task-ok-Button {
+      top: 100%;
+      left: 365px;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .board-task-slide-in-div {
+      left: 0;
+    }
+  }
+  
+  @media (max-width: 940px) {
+    .task-left {
+      top: 90px;
+    }
+  
+    .task-right {
+      position: absolute;
+      left: 50px;
+      top: 20px;
+      z-index: 2;
+      height: unset;
+      width: unset;
+      bottom: unset;
+    }
+  }
+  
+  @media (max-width: 716px) {
+    nav {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 80px;
+      padding: 15px 5px;
+      border-right: unset;
+      border-top: 1px solid #d1d1d1;
+      padding: 0;
+    }
+  
+    .nav-element {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+      width: 70px;
+      height: 100%;
+      padding: 10px 0;
+      margin: 0;
+      border-radius: 0;
+    }
+  
+    .nav-element img {
+      display: flex;
+      height: 25px;
+      width: 25px;
+    }
+  
+    .nav-element span {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+    }
+  
+    .nav-top {
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+  
+    .nav-bottom {
+      display: none;
+    }
+  
+    .content {
+      left: 15px;
+      top: 0px;
+      bottom: 80px;
+    }
+  
+    .board-task-slide-in-div {
+      width: 350px;
+      top: 100px;
+      bottom: 30px;
+      height: unset;
+      padding: 30px;
+      overflow-x: hidden;
+      z-index: 2;
+    }
+  
+    .board-task-slide-in-title {
+      font-size: 30px;
+    }
+  
+    .board-task-slide-in-description,
+    .board-task-slide-in-datevalue,
+    .board-task-slide-in-contact-name {
+      font-size: 15px;
+    }
+  
+    .board-task-slide-in-datename,
+    .board-task-slide-in-priorityname,
+    .board-task-slide-in-edit-task-subtask,
+    .board-task-slide-in-assignedto {
+      font-size: 18px;
+    }
+  
+    .board-task-slide-in-editbutton {
+      width: 37px;
+      min-height: 37px;
+      margin-right: -10px;
+    }
+  
+    .add-task-select-contacts {
+      font-size: 15px;
+    }
+  
+    .add-task-input-title {
+      font-size: 25px;
+    }
+  
+    .add-task-slide-in-header {
+      padding: 20px 0 0 0;
+    }
+  
+    .add-task-slide-in-menu {
+      width: 350px;
+      padding: 0 25px;
+    }
+  
+    .add-task-slide-in-header span {
+      display: none;
+    }
+  
+    .add-task-slide-in-header::before {
+      height: 50px;
+      width: 40px;
+      content: "";
+      background-image: url("../assets/img/favico.png");
+      background-size: 35px;
+      background-repeat: no-repeat;
+      margin-top: 10px;
+    }
+  
+    .add-task-slide-in-header {
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+      height: 80px;
+      width: 350px;
+      margin-left: -30px;
+      padding: 10px 70px 10px 40px;
+      margin-bottom: 20px;
+    }
+  
+    .board-task-slide-in-category img {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      cursor: pointer;
+    }
+  
+    .add-task-category-form span,
+    .add-task-list-element {
+      font-size: 15px;
+    }
+  
+    .add-task-slide-in-create-task-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      height: 55px;
+    }
+  
+    .add-task-slide-in-check-icon {
+      margin-bottom: 10px;
+    }
+  
+    .add-task-slide-in-header > img {
+      left: 310px;
+    }
+  
+    .add-task-input-date {
+      font-size: 15px;
+    }
+  
+    .add-task-priority-label {
+      height: 40px;
+      font-size: 14px;
+    }
+  
+    .add-task-priority-urgent,
+    .add-task-priority-medium,
+    .add-task-priority-low {
+      box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.86);
+    }
+  
+    #addTaskPriorityLabelUrgent:hover,
+    #addTaskPriorityLabelMedium:hover,
+    #addTaskPriorityLabelLow:hover {
+      box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.86);
+    }
+  
+    .add-task-priority-label input {
+      width: 105px;
+      height: 45px;
+    }
+  
+    .add-task-checkbox-container {
+      width: 253px;
+    }
+  
+    .add-task-contact-checkbox {
+      width: 92%;
+    }
+  
+    .add-task-contact-container {
+      font-size: 15px;
+    }
+  
+    .board-task-slide-in-edit-task-ok-Button {
+      left: 120px;
+    }
+  
+    .add-task-priority-container {
+      margin: 35px 0 25px 0;
+    }
+  
+    .board-task-slide-in-edit-task-Assigned-to {
+      margin-top: 10px;
+    }
+  
+    .add-task-input-title {
+      font-size: 20px;
+    }
+  
+    .add-task-description-textarea {
+      font-size: 15px;
+    }
+  
+    .add-task-date {
+      height: 85px;
+    }
+  
+    .task-left {
+      top: 70px;
+      width: 300px;
+    }
+  
+    .board-task-slide-in-edit-div {
+      width: 300px;
+    }
+  
+    .add-task-date span,
+    .add-task-category > span,
+    .add-task-description span,
+    .add-task-subtasks span {
+      font-size: 18px;
+    }
+  
+    .task-right {
+      left: 30px;
+    }
+  
+    .btn-clear,
+    .btn-addTask {
+      white-space: nowrap;
+      font-size: 18px;
+      height: 80%;
+      width: 80%;
+      padding: 13px 10px 13px 10px;
+    }
+  
+    .add-task-category {
+      margin-bottom: -30px;
+    }
+  
+    .height-1 {
+      margin-top: 30px;
+    }
+  
+    .task-added-to-board {
+      left: -120px;
+      width: 250px;
+      height: 60px;
+    }
+  
+    .task-added-to-board span {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 440px) {
+    header {
+      height: 80px;
+    }
+  
+    header span {
+      font-size: 15px;
+    }
+  
+    .help {
+      display: none;
+    }
+  
+    .add-task-button {
+      display: none;
+    }
+  
+    .task-form {
+      height: 40px;
+    }
+  
+    .to-do-header,
+    .in-progress-header,
+    .await-feedback-header,
+    .done-header {
+      height: 20px;
+      font-size: 20px;
+      width: 100%;
+    }
+  
+    .board-add-task-plus-icon {
+      height: 27px;
+      width: 27px;
+    }
+  
+    .to-do-tasks-container,
+    .in-progress-tasks-container,
+    .await-feedback-tasks-container,
+    .done-tasks-container {
+      padding: 20px 0;
+    }
+  
+    .task-main {
+      left: -10px;
+    }
+  
+    .task-left {
+      top: 50px;
+    }
+  
+    .task-right {
+      top: 10px;
+    }
+  }

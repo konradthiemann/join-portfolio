@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: backend.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: backend.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * backend URL
+ * 
+ */
+setURL('https://patrizio-marzullo.developerakademie.net/Join/smallest_backend_ever')
+
+/**
+ * userList = list of our contacts/users
+ * categorylist = list of our choosable task-categories
+ * taskList = list of all saved tasks
+ */
+let userList = [];
+let categoryList = [];
+let taskList = [];
+
+/**
+ * syncronize data from the backend to the user and category.
+ * 
+ */
+async function initBackend() {
+    await downloadFromServer();
+    userList = JSON.parse(backend.getItem('users')) || [];
+    categoryList = JSON.parse(backend.getItem('category')) || [];
+    taskList = JSON.parse(backend.getItem('tasks')) || [];
+}
+
+/**
+ * Adds a user to the userList. Push to the backend.
+ * 
+ * @param {} user the user object
+ */
+async function addUser(user) {
+    userList.push(user);
+    await backend.setItem('users', JSON.stringify(userList));
+    await initBackend();
+}
+
+/**
+ * 
+ * Save the editContact content
+ */
+async function saveEditContact() {
+    // userList im Backend speichern
+    await backend.setItem('users', JSON.stringify(userList));
+    await initBackend();
+}
+
+/**
+ * 
+ * removes all users form the backend.
+ */
+async function deleteUser() {
+    await backend.deleteItem('users');
+    await initBackend();
+}
+
+/**
+ * Adds a category to the categoryList. Push to the backend.
+ * 
+ * @param {} category the category object
+ */
+async function addCategory(category) {
+    categoryList.push(category);
+    await backend.setItem('category', JSON.stringify(categoryList));
+    await initBackend();
+}
+
+/**
+ * pushes the taskClipboard to the backend
+ * 
+ */
+async function pushTaskToBackend() {
+    taskList.push(taskClipboard);
+    await backend.setItem('tasks', JSON.stringify(taskList));
+    await initBackend()
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#SignUpButtonHTML">SignUpButtonHTML</a></li><li><a href="global.html#SignUpInputHTML">SignUpInputHTML</a></li><li><a href="global.html#addCategory">addCategory</a></li><li><a href="global.html#addCategoryToClipboard">addCategoryToClipboard</a></li><li><a href="global.html#addCategoryToClipboardHTML">addCategoryToClipboardHTML</a></li><li><a href="global.html#addContactToTask">addContactToTask</a></li><li><a href="global.html#addEventListenerLogInInput">addEventListenerLogInInput</a></li><li><a href="global.html#addForgotPasswordHTML">addForgotPasswordHTML</a></li><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addNewContactValidation">addNewContactValidation</a></li><li><a href="global.html#addReturnButtonHTML">addReturnButtonHTML</a></li><li><a href="global.html#addSubtaskToClipboard">addSubtaskToClipboard</a></li><li><a href="global.html#addTaskCreateNewCategoryColorSelector">addTaskCreateNewCategoryColorSelector</a></li><li><a href="global.html#addTaskFillSlideInMenu">addTaskFillSlideInMenu</a></li><li><a href="global.html#addTaskOffScreenMenu">addTaskOffScreenMenu</a></li><li><a href="global.html#addTaskSetPriority">addTaskSetPriority</a></li><li><a href="global.html#addTaskSlideInMenu">addTaskSlideInMenu</a></li><li><a href="global.html#addUser">addUser</a></li><li><a href="global.html#bgHide">bgHide</a></li><li><a href="global.html#bgHideRemove">bgHideRemove</a></li><li><a href="global.html#boardTaskEditSlideInInsertDescription">boardTaskEditSlideInInsertDescription</a></li><li><a href="global.html#boardTaskEditSlideInInsertDueDate">boardTaskEditSlideInInsertDueDate</a></li><li><a href="global.html#boardTaskEditSlideInInsertPriority">boardTaskEditSlideInInsertPriority</a></li><li><a href="global.html#boardTaskEditSlideInInsertTitle">boardTaskEditSlideInInsertTitle</a></li><li><a href="global.html#boardTaskEditSlideInInsertValues">boardTaskEditSlideInInsertValues</a></li><li><a href="global.html#boardTaskFillSlideInEditTaskHTML">boardTaskFillSlideInEditTaskHTML</a></li><li><a href="global.html#boardTaskSaveEditTaskTolist">boardTaskSaveEditTaskTolist</a></li><li><a href="global.html#boardTaskSlideInAssignedToHeaderHTML">boardTaskSlideInAssignedToHeaderHTML</a></li><li><a href="global.html#boardTaskSlideInEditTask">boardTaskSlideInEditTask</a></li><li><a href="global.html#boardTaskSlideInInsertSubtasks">boardTaskSlideInInsertSubtasks</a></li><li><a href="global.html#boardTaskSlideInInsertSubtasksChecked">boardTaskSlideInInsertSubtasksChecked</a></li><li><a href="global.html#boardTaskSlideInInsertSubtasksUnChecked">boardTaskSlideInInsertSubtasksUnChecked</a></li><li><a href="global.html#boardTaskSlideInOkButton">boardTaskSlideInOkButton</a></li><li><a href="global.html#boardTaskSlideInSubtaskHeaderHTML">boardTaskSlideInSubtaskHeaderHTML</a></li><li><a href="global.html#boardTaskStatus">boardTaskStatus</a></li><li><a href="global.html#changeBackgroundColor">changeBackgroundColor</a></li><li><a href="global.html#changeLogInInputHTML">changeLogInInputHTML</a></li><li><a href="global.html#changeLogoColor">changeLogoColor</a></li><li><a href="global.html#changeLogoPosition">changeLogoPosition</a></li><li><a href="global.html#checkBoardTaskEditSlideInInsertPriority">checkBoardTaskEditSlideInInsertPriority</a></li><li><a href="global.html#checkCheckboxes">checkCheckboxes</a></li><li><a href="global.html#checkForContactInClipboard">checkForContactInClipboard</a></li><li><a href="global.html#checkForExistingEmail">checkForExistingEmail</a></li><li><a href="global.html#checkForExpandedContactList">checkForExpandedContactList</a></li><li><a href="global.html#checkForSameInput">checkForSameInput</a></li><li><a href="global.html#checkNumberOfLetters">checkNumberOfLetters</a></li><li><a href="global.html#chooseRightPasswordImgage">chooseRightPasswordImgage</a></li><li><a href="global.html#clearTask">clearTask</a></li><li><a href="global.html#clearTaskClipboard">clearTaskClipboard</a></li><li><a href="global.html#closeLogout">closeLogout</a></li><li><a href="global.html#commitChangePassword">commitChangePassword</a></li><li><a href="global.html#compareDates">compareDates</a></li><li><a href="global.html#confirmAddedTaskToBoard">confirmAddedTaskToBoard</a></li><li><a href="global.html#confirmCreateNewCategory">confirmCreateNewCategory</a></li><li><a href="global.html#contactNameCheck">contactNameCheck</a></li><li><a href="global.html#contactRightSide">contactRightSide</a></li><li><a href="global.html#contactValidation">contactValidation</a></li><li><a href="global.html#containers">containers</a></li><li><a href="global.html#contentDiv">contentDiv</a></li><li><a href="global.html#createAnimation">createAnimation</a></li><li><a href="global.html#createCategoryInputHTML">createCategoryInputHTML</a></li><li><a href="global.html#createCategoryListHTML">createCategoryListHTML</a></li><li><a href="global.html#createContactAddTaskHTML">createContactAddTaskHTML</a></li><li><a href="global.html#createForgotPasswordAnimation">createForgotPasswordAnimation</a></li><li><a href="global.html#createForgotPasswordHTML">createForgotPasswordHTML</a></li><li><a href="global.html#createForgotPasswordNewURLHTML">createForgotPasswordNewURLHTML</a></li><li><a href="global.html#createLogInElementsHTML">createLogInElementsHTML</a></li><li><a href="global.html#createNewCategory">createNewCategory</a></li><li><a href="global.html#createNewCategoryColorSelectorHTML">createNewCategoryColorSelectorHTML</a></li><li><a href="global.html#createNewCategoryColorSelectorRadioButtonHTML">createNewCategoryColorSelectorRadioButtonHTML</a></li><li><a href="global.html#createNewCategoryHTML">createNewCategoryHTML</a></li><li><a href="global.html#createSelectedContactIcons">createSelectedContactIcons</a></li><li><a href="global.html#createSelectedContactIconsDivHTML">createSelectedContactIconsDivHTML</a></li><li><a href="global.html#createSubtask">createSubtask</a></li><li><a href="global.html#createSubtaskHTML">createSubtaskHTML</a></li><li><a href="global.html#createTaskAddTaskSite">createTaskAddTaskSite</a></li><li><a href="global.html#createTaskBoardSite">createTaskBoardSite</a></li><li><a href="global.html#currentUser">currentUser</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#doNotClose">doNotClose</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#eventOnEditContact">eventOnEditContact</a></li><li><a href="global.html#expandContactList">expandContactList</a></li><li><a href="global.html#fillSubtaskStatusbar">fillSubtaskStatusbar</a></li><li><a href="global.html#forgotPassword">forgotPassword</a></li><li><a href="global.html#forgotPasswordInputHTML">forgotPasswordInputHTML</a></li><li><a href="global.html#generateUsersForLetterHTML">generateUsersForLetterHTML</a></li><li><a href="global.html#getAmountofTasks">getAmountofTasks</a></li><li><a href="global.html#getAmountofTasksInStatus">getAmountofTasksInStatus</a></li><li><a href="global.html#getDeadlineAndAmountOfUrgetTasks">getDeadlineAndAmountOfUrgetTasks</a></li><li><a href="global.html#getNewCategoryColor">getNewCategoryColor</a></li><li><a href="global.html#getRandomColor">getRandomColor</a></li><li><a href="global.html#guestLogIn">guestLogIn</a></li><li><a href="global.html#help">help</a></li><li><a href="global.html#helpHTML">helpHTML</a></li><li><a href="global.html#hideContactList">hideContactList</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#initBackend">initBackend</a></li><li><a href="global.html#initChangePassword">initChangePassword</a></li><li><a href="global.html#initEditContacts">initEditContacts</a></li><li><a href="global.html#initRegistrationPageHTML">initRegistrationPageHTML</a></li><li><a href="global.html#initializeEditedTask">initializeEditedTask</a></li><li><a href="global.html#insertAddTask">insertAddTask</a></li><li><a href="global.html#insertAssignedContactsToTaskGreaterThanTwoHTML">insertAssignedContactsToTaskGreaterThanTwoHTML</a></li><li><a href="global.html#insertAssignedContactsToTaskHTML">insertAssignedContactsToTaskHTML</a></li><li><a href="global.html#insertAssignedContactsToTaskLowerThanTwoHTML">insertAssignedContactsToTaskLowerThanTwoHTML</a></li><li><a href="global.html#insertAwaitFeedbackTasksHeaderHTML">insertAwaitFeedbackTasksHeaderHTML</a></li><li><a href="global.html#insertBoard">insertBoard</a></li><li><a href="global.html#insertBoardHTML">insertBoardHTML</a></li><li><a href="global.html#insertBoardHeaderHTML">insertBoardHeaderHTML</a></li><li><a href="global.html#insertBoardTaskSlideInAssigned">insertBoardTaskSlideInAssigned</a></li><li><a href="global.html#insertBoardTaskSlideInAssignedContactsIteration">insertBoardTaskSlideInAssignedContactsIteration</a></li><li><a href="global.html#insertBoardTaskSlideInAssignedContactsIterationHTML">insertBoardTaskSlideInAssignedContactsIterationHTML</a></li><li><a href="global.html#insertBoardTaskSlideInCategoryHTML">insertBoardTaskSlideInCategoryHTML</a></li><li><a href="global.html#insertBoardTaskSlideInDescriptionHTML">insertBoardTaskSlideInDescriptionHTML</a></li><li><a href="global.html#insertBoardTaskSlideInDueDateHTML">insertBoardTaskSlideInDueDateHTML</a></li><li><a href="global.html#insertBoardTaskSlideInPriorityHTML">insertBoardTaskSlideInPriorityHTML</a></li><li><a href="global.html#insertBoardTaskSlideInTitleHTML">insertBoardTaskSlideInTitleHTML</a></li><li><a href="global.html#insertBoardTasks">insertBoardTasks</a></li><li><a href="global.html#insertCategoryListHTML">insertCategoryListHTML</a></li><li><a href="global.html#insertCategorySelectorFromInterruptHTML">insertCategorySelectorFromInterruptHTML</a></li><li><a href="global.html#insertCategorySelectorHTML">insertCategorySelectorHTML</a></li><li><a href="global.html#insertContacts">insertContacts</a></li><li><a href="global.html#insertContentHTML">insertContentHTML</a></li><li><a href="global.html#insertDescriptionHTML">insertDescriptionHTML</a></li><li><a href="global.html#insertDoneTasksHeaderHTML">insertDoneTasksHeaderHTML</a></li><li><a href="global.html#insertDueDateHTML">insertDueDateHTML</a></li><li><a href="global.html#insertInProgressTasksHeaderHTML">insertInProgressTasksHeaderHTML</a></li><li><a href="global.html#insertLegalNotice">insertLegalNotice</a></li><li><a href="global.html#insertOpenTaskSlideInHTML">insertOpenTaskSlideInHTML</a></li><li><a href="global.html#insertPriorityHTML">insertPriorityHTML</a></li><li><a href="global.html#insertPrivacy">insertPrivacy</a></li><li><a href="global.html#insertSubtaskProgress">insertSubtaskProgress</a></li><li><a href="global.html#insertSubtasksHTML">insertSubtasksHTML</a></li><li><a href="global.html#insertSummary">insertSummary</a></li><li><a href="global.html#insertTaskContactlistHTML">insertTaskContactlistHTML</a></li><li><a href="global.html#insertTaskLeft">insertTaskLeft</a></li><li><a href="global.html#insertTaskRightHTML">insertTaskRightHTML</a></li><li><a href="global.html#insertTaskSlideInHeader">insertTaskSlideInHeader</a></li><li><a href="global.html#insertTaskTitleHTML">insertTaskTitleHTML</a></li><li><a href="global.html#insertTaskTolistHTML">insertTaskTolistHTML</a></li><li><a href="global.html#insertTodoTasksHeaderHTML">insertTodoTasksHeaderHTML</a></li><li><a href="global.html#interruptCreateNewCategory">interruptCreateNewCategory</a></li><li><a href="global.html#invEditContact">invEditContact</a></li><li><a href="global.html#invEditContactVariables">invEditContactVariables</a></li><li><a href="global.html#legalNoticeHTML">legalNoticeHTML</a></li><li><a href="global.html#loadCategorylist">loadCategorylist</a></li><li><a href="global.html#loadChangePasswordPage">loadChangePasswordPage</a></li><li><a href="global.html#loadContactList">loadContactList</a></li><li><a href="global.html#loadContentHTML">loadContentHTML</a></li><li><a href="global.html#loadDragAndDrop">loadDragAndDrop</a></li><li><a href="global.html#loadEditContact">loadEditContact</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#loadRegistrationPage">loadRegistrationPage</a></li><li><a href="global.html#logIn">logIn</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#markActiveNavElement">markActiveNavElement</a></li><li><a href="global.html#openAndCloseContactList">openAndCloseContactList</a></li><li><a href="global.html#openLogOutButton">openLogOutButton</a></li><li><a href="global.html#openNewContact">openNewContact</a></li><li><a href="global.html#openTask">openTask</a></li><li><a href="global.html#priorityValidation">priorityValidation</a></li><li><a href="global.html#privacyHTML">privacyHTML</a></li><li><a href="global.html#pushAddTaskValuesToClipboard">pushAddTaskValuesToClipboard</a></li><li><a href="global.html#pushBoardTaskToClipboard">pushBoardTaskToClipboard</a></li><li><a href="global.html#pushBoardTaskValuesToClipboard">pushBoardTaskValuesToClipboard</a></li><li><a href="global.html#pushDescriptionToTaskClipboard">pushDescriptionToTaskClipboard</a></li><li><a href="global.html#pushDueDateToTaskClipboard">pushDueDateToTaskClipboard</a></li><li><a href="global.html#pushEditedTaskTolist">pushEditedTaskTolist</a></li><li><a href="global.html#pushPriorityToTaskClipboard">pushPriorityToTaskClipboard</a></li><li><a href="global.html#pushTaskToBackend">pushTaskToBackend</a></li><li><a href="global.html#rememberMe">rememberMe</a></li><li><a href="global.html#removeAddContact">removeAddContact</a></li><li><a href="global.html#removeContactFromTask">removeContactFromTask</a></li><li><a href="global.html#removeEmailAnimation">removeEmailAnimation</a></li><li><a href="global.html#removeHelp">removeHelp</a></li><li><a href="global.html#removeWrongEmailAlert">removeWrongEmailAlert</a></li><li><a href="global.html#renderContactSideScroll">renderContactSideScroll</a></li><li><a href="global.html#renderUserList">renderUserList</a></li><li><a href="global.html#returnToLoginPage">returnToLoginPage</a></li><li><a href="global.html#returnToLoginPageCSSHTML">returnToLoginPageCSSHTML</a></li><li><a href="global.html#saveEditContact">saveEditContact</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#searchContacts">searchContacts</a></li><li><a href="global.html#sendEmail">sendEmail</a></li><li><a href="global.html#sendEmailAnimation">sendEmailAnimation</a></li><li><a href="global.html#setElementsFromLocalStorage">setElementsFromLocalStorage</a></li><li><a href="global.html#showAddContact">showAddContact</a></li><li><a href="global.html#showEditContacts">showEditContacts</a></li><li><a href="global.html#showEditContactsHTML">showEditContactsHTML</a></li><li><a href="global.html#showLogInElements">showLogInElements</a></li><li><a href="global.html#showNewContactMessage">showNewContactMessage</a></li><li><a href="global.html#showWelcomeUserMessage">showWelcomeUserMessage</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#signUpNewUser">signUpNewUser</a></li><li><a href="global.html#signUpNewUserValidateEmail">signUpNewUserValidateEmail</a></li><li><a href="global.html#signUpNewUserValidateName">signUpNewUserValidateName</a></li><li><a href="global.html#signUpNewUserValidatePassword">signUpNewUserValidatePassword</a></li><li><a href="global.html#signUpSetsUser">signUpSetsUser</a></li><li><a href="global.html#summaryBottomHTML">summaryBottomHTML</a></li><li><a href="global.html#summaryHTML">summaryHTML</a></li><li><a href="global.html#summaryTopHTML">summaryTopHTML</a></li><li><a href="global.html#summaryTopLater">summaryTopLater</a></li><li><a href="global.html#taskToListHTML">taskToListHTML</a></li><li><a href="global.html#titleIsEmpty">titleIsEmpty</a></li><li><a href="global.html#titleValidation">titleValidation</a></li><li><a href="global.html#toggleAddTaskMenuOffScreen">toggleAddTaskMenuOffScreen</a></li><li><a href="global.html#toggleCategoryList">toggleCategoryList</a></li><li><a href="global.html#toggleContactTask">toggleContactTask</a></li><li><a href="global.html#togglePasswordPlaceholder">togglePasswordPlaceholder</a></li><li><a href="global.html#togglePasswordVisibility">togglePasswordVisibility</a></li><li><a href="global.html#toggleSubtaskInlist">toggleSubtaskInlist</a></li><li><a href="global.html#toggleTaskBoardTask">toggleTaskBoardTask</a></li><li><a href="global.html#toggleTaskBoardTaskStyleDisplayNone">toggleTaskBoardTaskStyleDisplayNone</a></li><li><a href="global.html#toggleTaskBoardTaskStyleReduceOpacity">toggleTaskBoardTaskStyleReduceOpacity</a></li><li><a href="global.html#toggleWrongPasswordAlert">toggleWrongPasswordAlert</a></li><li><a href="global.html#updatePassword">updatePassword</a></li><li><a href="global.html#userList">userList</a></li><li><a href="global.html#validateNewContact">validateNewContact</a></li><li><a href="global.html#wrongPasswordHTML">wrongPasswordHTML</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu May 11 2023 20:29:10 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
