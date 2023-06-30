@@ -315,17 +315,7 @@ function addReturnButtonHTML() {
     `;
 }
 
-/**
- * return to log in page from same and different URL
- */
-function returnToLoginPage() {
-  if (window.location.href.includes("change_password.html")) {
-    window.location.href = "index.html";
-  } else if (window.location.href.includes("index.html")) {
-    returnToLoginPageCSSHTML();
-    setElementsFromLocalStorage();
-  }
-}
+
 
 /**
  * create and change all html elemts wich are needed for returning back to log in page

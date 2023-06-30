@@ -129,3 +129,30 @@ function signUpSetsUser(newContactName, newContactEmail, newContactPassword) {
   returnToLoginPage();
   showNewContactMessage();
 }
+
+/**
+ * return to log in page from same and different URL
+ */
+function returnToLoginPage() {
+  if (window.location.href.includes("change_password.html")) {
+    window.location.href = "index.html";
+  } else if (window.location.href.includes("index.html")) {
+    returnToLoginPageCSSHTML();
+    setElementsFromLocalStorage();
+  }
+}
+
+/**
+ * show new contact created message
+ *
+ */
+function showNewContactMessage() {
+  if (document.getElementById("newContactCreated")) {
+    const newContactMessage = document.getElementById("newContactCreated");
+
+    newContactMessage.classList.add("showNewContactFadeIn");
+    setTimeout(() => {
+      newContactMessage.classList.remove("showNewContactFadeIn");
+    }, 3000);
+  }
+}

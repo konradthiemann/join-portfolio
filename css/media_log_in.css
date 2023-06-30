@@ -20,8 +20,9 @@
     }
   
     .log-in-container {
-      height: 530px;
-      padding-top: 45px;
+      height: 420px;
+      padding: 0;
+      gap: 20px;
     }
   
     .join-logo-login-new-position {
@@ -33,7 +34,7 @@
   
     .log-in-input-container {
       width: 90%;
-      height: 250px !important;
+      height: 130px !important;
     }
   
     .log-in-remember-me-forgot-password-section {
@@ -45,18 +46,20 @@
     }
   
     .log-in-commit-guest-log-in-section {
-      flex-direction: column;
-      height: 150px;
+      height: 100px;
+      justify-content: center;
     }
   
     .log-in-commit-guest-log-in-section-button-log-in {
-      width: 180px;
+      width: 140px;
       height: 50px;
+      font-size: 17px;
     }
   
     .log-in-commit-guest-log-in-section-button-guest {
-      width: 180px;
+      width: 140px;
       height: 50px;
+      font-size: 17px;
     }
   
     .forgot-password-description-container {
