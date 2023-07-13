@@ -2,7 +2,7 @@
  * backend URL
  * 
  */
-setURL('https://konrad-thiemann.developerakademie.net/Join/smallest_backend_ever')
+setURL('https://join.konrad-thiemann.de/smallest_backend_ever')
 
 /**
  * userList = list of our contacts/users
@@ -22,6 +22,7 @@ async function initBackend() {
     userList = JSON.parse(backend.getItem('users')) || [];
     categoryList = JSON.parse(backend.getItem('category')) || [];
     taskList = JSON.parse(backend.getItem('tasks')) || [];
+    // console.log(userList, categoryList, taskList, 'backend loaded');
 }
 
 /**
